@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.vue": "vue",
+        "*.wpy": "vue",
+        "*.wxml": "html",
+        "*.wxss": "css",
+        "stdlib.h": "c",
+        "dynamiclist.h": "c",
+        "list.h": "c",
+        "defs.h": "c"
+    }
+}
