@@ -4,9 +4,8 @@
         "*.wpy": "vue",
         "*.wxml": "html",
         "*.wxss": "css",
-        "stdlib.h": "c",
-        "dynamiclist.h": "c",
-        "list.h": "c",
-        "defs.h": "c"
+        "assert.h": "c",
+        "malloc.h": "c",
+        "list.h": "c"
     }
 }

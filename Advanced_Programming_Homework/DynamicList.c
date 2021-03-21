@@ -2,9 +2,9 @@
 #include <malloc.h>
 #include "DynamicList.h"
 
-struct DynamicList *create_DynamicList( int init_cap )
+struct list *create_list( int init_cap )
 {
-    struct DynamicList *l = (struct DynamicList *)malloc( sizeof(struct DynamicList) );
+    struct list *l = (struct list *)malloc( sizeof(struct list) );
 	
 	if( init_cap <= 0 ) init_cap = 10;
 	l->ele = (char *)malloc( init_cap * sizeof(char) );
@@ -14,7 +14,7 @@ struct DynamicList *create_DynamicList( int init_cap )
     return l;	
 }
 
-struct DynamicList *insert_DynamicList( struct DynamicList *l, int i, char e ) {	
+struct list *insert_DynamicList( struct list *l, int i, char e ) {	
     int j;
 
     if( l->count == l->capacity ) {
@@ -44,7 +44,7 @@ struct DynamicList *insert_DynamicList( struct DynamicList *l, int i, char e ) {
 	
     return l;
 }
-struct DynamicList *delete_DynamicList( struct DynamicList *l, int i )
+struct list *delete_DynamicList( struct list *l, int i )
 {
 	int j;
 

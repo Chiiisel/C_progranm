@@ -1,28 +1,27 @@
 {
-    "version": "2.0.0",
-    "command": "gcc",
-    "args": [
-        "-g",
-        "${file}",
-        "D:\\Studio\\VisualStudioCodeWorkspace\\C_progranm\\main.c",
-        "D:\\Studio\\VisualStudioCodeWorkspace\\C_progranm\\DynamicList.c",
-        "D:\\Studio\\VisualStudioCodeWorkspace\\C_progranm\\StaticList.c",
-        "-o",
-        "${fileBasenameNoExtension}.exe"
-    ], // 编译命令参数
-    "problemMatcher": {
-        "owner": "cpp",
-        "fileLocation": [
-            "relative",
-            "${workspaceFolder}"
-        ],
-        "pattern": {
-            "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-            "file": 1,
-            "line": 2,
-            "column": 3,
-            "severity": 4,
-            "message": 5
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "D:\\Application_for_Study\\mingw64\\bin\\g++.exe",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
         }
-    }
+    ],
+    "version": "2.0.0"
 }

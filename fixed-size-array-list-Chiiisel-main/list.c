@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <assert.h>
-
+#include <string.h>
 #include "list.h"
 
 struct list *create_list()
 {
     struct list *l=(struct list*)malloc( sizeof(struct list) );
+	memset(l->ele,0,MAX_ELE);
     l->counter = 0;
     return l;
     
     /* ele */
 };
 
-struct list *insert_list( struct list *l, int i, char e ) {	
+struct list *insert( struct list *l, int i, char e ) {	
 	int j;
 
     if( l->counter == MAX_ELE ) return NULL;
@@ -30,7 +31,7 @@ struct list *insert_list( struct list *l, int i, char e ) {
 	return l;
 }
 
-struct list *delete_list( struct list *l, int i )
+struct list *delete_at( struct list *l, int i )
 {
 	int j;
 
@@ -63,7 +64,7 @@ void replace( struct list *l, int i, T e )
 	assert( i >= 0 && i <= l->counter );
 
 	l->ele[i] = e;
-    return 0;
+    return ;
 }
 
 int index( struct list *l, T e )
