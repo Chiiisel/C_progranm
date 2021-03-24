@@ -44,6 +44,8 @@ struct list *insert( struct list *l, int i, T e ) {
 	
     l->ele[i] = e;
 	
+    if(l->ele[l->counter] != '\0')
+        l->ele[l->counter] = '\0';
     return l;
 }
 struct list *delete_at( struct list *l, int i )
@@ -56,6 +58,7 @@ struct list *delete_at( struct list *l, int i )
 		l->ele[j] = l->ele[j+1];
 	}
 
+    l->ele[l->counter-1]='\0';
 	l->counter --;
 
 	return l;
@@ -63,7 +66,7 @@ struct list *delete_at( struct list *l, int i )
 
 int size( struct list *l )
 {
-    return l->counter+1;
+    return l->counter;
 }
 
 T get( struct list *l, int i )
@@ -77,14 +80,17 @@ void replace( struct list *l, int i, T e )
 {
     int j;
 	assert( i >= 0 && i <= l->counter );
-    return l->ele[i];
+    l->ele[i] = e;
+    return ;
 }
 
 int index( struct list *l, T e )
 {
     int j;
 	for( j=l->counter; j>0; j-- ) {
-        if(l->ele[j] = e)
-        return j;	
+        if(l->ele[j] == e){
+			return j;
+		}	
 	}
+    return NULL;
 }

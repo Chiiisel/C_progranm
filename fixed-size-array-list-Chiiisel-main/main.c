@@ -26,7 +26,7 @@ int main()
 	printf("function replace(l,1,'Z') = %s\r\n",l->ele);
 
 	int the_index=0;
-	the_index = index( l, 'Z' );
-	printf("the_size = %d\r\nthe_index = %d",the_size,the_index);
+	the_index = index( l, 'D' );
+	printf("the_size = %d\nthe_index of 'D' = %d",the_size,the_index);
 	free(l);
 }

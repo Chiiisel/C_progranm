@@ -27,6 +27,6 @@ int main()
 
 	int the_index=0;
 	the_index = index( l, 'Z' );
-	printf("the_size = %d\r\nthe_index = %d",the_size,the_index);
+	printf("the_size = %d\r\nthe_index of 'Z'= %d",the_size,the_index);
 	free(l);
 }

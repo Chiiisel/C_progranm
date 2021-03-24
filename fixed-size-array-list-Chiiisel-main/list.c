@@ -40,7 +40,7 @@ struct list *delete_at( struct list *l, int i )
 	for( j=i; j<l->counter-1; j++ ) {
 		l->ele[j] = l->ele[j+1];
 	}
-
+	l->ele[l->counter-1]='\0';
 	l->counter --;
 
 	return l;
@@ -49,7 +49,7 @@ struct list *delete_at( struct list *l, int i )
 
 int size( struct list *l )
 {
-    return l->counter+1;
+    return l->counter;
 }
 
 T get( struct list *l, int i )
@@ -70,9 +70,11 @@ void replace( struct list *l, int i, T e )
 int index( struct list *l, T e )
 {
     int j;
-	for( j=l->counter; j>0; j-- ) {
-        if(l->ele[j] = e)
-        return j;	
+	for( j= 0; j< l->counter-1; j++ ) {
+        if(l->ele[j] == e){
+			return j;
+		}	
 	}
+	return NULL;
 }
 
