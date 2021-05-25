@@ -23,7 +23,7 @@ int main()
 	if(is_empty(s))
 		printf("stack is empty \r\n");
 	else
-		printf("stack is not empty\r\n");
+		printf("stack is not empty \r\n");
 
 
 	uninit_stack(s);
